@@ -480,7 +480,7 @@ class SDANE(torch.optim.Optimizer):
                     k += 1
                     
                     if activate_stopping_criterion:
-                        # ||\nabla F_{i,r}(x_{i,r+1})||^2 \le lambda^2 / 4 * ||\xx_{i,r+1} - vv^r||^2 + epsilon
+                        # ||\nabla F_{i,r}(x_{i,r+1})||^2 \le lambda^2 / 4 * ||\xx_{i,r+1} - vv^r||^2 
                         if self.test_critertion(params, i, lambda_reguriz, y_or_v, grad_current_reweight) == 'pass':
                             continue_flag = False
                             nb_local_steps = max(nb_local_steps, k)
