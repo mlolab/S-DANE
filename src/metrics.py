@@ -1,6 +1,4 @@
 import torch 
-import tqdm
-from torch.utils.data import DataLoader 
 
 def get_metric_function(metric_name):
 

@@ -2,8 +2,8 @@
 
 The official Pytorch implementation of [Stabilized Proximal Point Methods for Federated Optimization](https://openreview.net/forum?id=WukSyFSzDt&referrer=%5Bthe%20profile%20of%20Xiaowen%20Jiang%5D(%2Fprofile%3Fid%3D~Xiaowen_Jiang1)).
 
-## Installation
-`pip install `
+## Install dependencies
+`pip install -r requirements.txt`
 
 (The folder 'haven' is from [haven-ai](https://github.com/haven-ai/haven-ai).)
 

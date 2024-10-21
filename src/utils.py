@@ -1,11 +1,7 @@
-import hashlib 
 import pickle
 import json
 import os
-import itertools
 import torch
-import numpy as np
-import tqdm 
 
 def save_pkl(fname, data):
     """Save data in pkl format."""

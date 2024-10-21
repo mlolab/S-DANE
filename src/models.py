@@ -1,5 +1,4 @@
 import torch
-from torch import nn
 from torch.nn import functional as F
 from . import base_classifier
 from . import optimizer
