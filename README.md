@@ -2,19 +2,38 @@
 
 The official Pytorch implementation of [Stabilized Proximal Point Methods for Federated Optimization](https://openreview.net/forum?id=WukSyFSzDt&referrer=%5Bthe%20profile%20of%20Xiaowen%20Jiang%5D(%2Fprofile%3Fid%3D~Xiaowen_Jiang1)).
 
-## Install dependencies
-`pip install -r requirements.txt`
+## 1. Requirement
+1)  Install the package [Poetry](https://python-poetry.org) following the [official poetry installation instructions](https://python-poetry.org/docs/).
 
-(The folder 'haven' is from [haven-ai](https://github.com/haven-ai/haven-ai).)
+2)  Navigate to the code directory 
 
-The implementation of the propsoed methods can be found in `./src/optimizers/sdane.py`.
+3) Install dependencies defined in `pyproject.toml`
+   ```
+   poetry install
+   ```
 
-## Experiments
-`mkdir -p ./datasets/libsvm ./datasets/cifar10 ./figures ./results`
+4) Test installation on a simple polyhedron feasibility problem
+   ```
+   poetry run pytest -s
+   ```
 
-Follow or modify experiments in `exp_configs.py`. 
+## 2. Usage
+### 2.1 Optimizers
 
-Modify `train.sh` and run: `bash train.sh`.
+The implementation of our propsoed methods (both standard and accelerated) can be found in `./src/optimizers/sdane.py`.
+
+Besides, we also provide implementations of 1) [Acc-Extragradient](https://arxiv.org/pdf/2205.15136), 2) [DANE](https://arxiv.org/pdf/1312.7853), 3) [Scaffold](https://arxiv.org/pdf/1910.06378), 4) [Scaffnew](https://arxiv.org/pdf/2202.09357), 5) [FedRed](https://proceedings.mlr.press/v235/jiang24e.html), 6) [FedProx](https://arxiv.org/pdf/1812.06127), and 7) [FedAvg](https://arxiv.org/abs/1602.05629). These can be found in 
+`./src/optimizers/fedred.py`
+
+### 2.2 Experiments
+The configurations of some pre-defined experiments can be found in `exp_configs.py`.
+
+Here is an example of how to run the experiment of logistic regression on the dataset of ijcnn.
+```
+mkdir -p ./datasets/libsvm ./figures ./results
+
+poetry run python trainval.py -e=ijcnn_iid_adaptive -sb=./results -d=./datasets/libsvm -c=0
+```
 
 ## Visualization
 
